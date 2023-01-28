@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    let count = 0;
+
+    function countup() {
+      count += 1;
+      ReactDOM.render(<Container />, root);
+    };
+
+    const Title = () => (
+      <h2>number : {count}</h2>
+    );
+
+    const Btn = () => (
+      <button
+        style={{
+          background: "tomato",
+        }}
+        onClick={countup}
+      >
+        this is button
+      </button >
+    );
+
+    const Container = () => (
+      <div>
+        <Title />
+        <Btn />
+      </div>
+    );
+
+    ReactDOM.render(<Container />, root);
+  </script>
+</body>
+
+</html>
